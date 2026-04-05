@@ -2,6 +2,12 @@
 
 Use these endpoints when you want to preview routing decisions, execute against the selected model, and capture user feedback on the result.
 
+<DocsCallout title="Start simple" tone="success">
+
+If you are new to the API, begin with `POST /v1/route` so you can inspect the expected model path before you execute a live request.
+
+</DocsCallout>
+
 ## Endpoints
 
 - `POST /v1/route`
@@ -12,19 +18,14 @@ Use these endpoints when you want to preview routing decisions, execute against 
 ## Route a prompt
 
 ```bash
-curl http://localhost:4000/v1/route \
+curl https://api.cs-code.com/v1/route \
   -H 'content-type: application/json' \
-  -H 'x-api-key: cs-code-demo-key' \
+  -H 'x-api-key: cp_live_xxxxx' \
   -d '{
-    "tenantId": "demo-company",
-    "teamId": "team-platform",
+    "tenantId": "your-tenant-id",
     "taskType": "chat",
-    "prompt": "Summarize the incident review into five customer-safe bullets.",
+    "prompt": "Summarize the latest customer issue in five bullets.",
     "preferredDeployment": "auto",
-    "tenantTags": ["cost-sensitive"],
-    "monthlyBudgetUsd": 250,
-    "monthlySpendUsd": 12,
-    "maxCostUsd": 0.08,
     "clientApplication": "curl"
   }'
 ```
@@ -41,18 +42,14 @@ Key response fields:
 ## Execute a prompt
 
 ```bash
-curl http://localhost:4000/v1/execute \
+curl https://api.cs-code.com/v1/execute \
   -H 'content-type: application/json' \
-  -H 'x-api-key: cs-code-demo-key' \
+  -H 'x-api-key: cp_live_xxxxx' \
   -d '{
-    "tenantId": "demo-company",
+    "tenantId": "your-tenant-id",
     "taskType": "chat",
-    "prompt": "Draft the customer-safe update now.",
+    "prompt": "Draft the customer-facing update now.",
     "preferredDeployment": "auto",
-    "tenantTags": ["cost-sensitive"],
-    "monthlyBudgetUsd": 250,
-    "monthlySpendUsd": 12,
-    "maxCostUsd": 0.08,
     "clientApplication": "curl"
   }'
 ```
@@ -86,19 +83,19 @@ Retry by sending:
 List recent route and execute records:
 
 ```bash
-curl 'http://localhost:4000/v1/interactions?mode=execute&page=1&pageSize=10' \
+curl 'https://api.cs-code.com/v1/interactions?mode=execute&page=1&pageSize=10' \
   -H 'authorization: Bearer <session-token>'
 ```
 
 Add quality feedback:
 
 ```bash
-curl http://localhost:4000/v1/interactions/interaction-124/feedback \
+curl https://api.cs-code.com/v1/interactions/interaction-124/feedback \
   -H 'authorization: Bearer <session-token>' \
   -H 'content-type: application/json' \
   -d '{
     "userRating": "negative",
-    "userComment": "Too verbose and still too internal."
+    "userComment": "Too verbose for the customer update."
   }'
 ```
 

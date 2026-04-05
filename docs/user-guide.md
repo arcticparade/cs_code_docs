@@ -58,15 +58,15 @@ Conversations are stored server-side per user and tenant, which means:
 
 ### Teams
 
-Use Teams to manage members, invites, budgets, and cost-center ownership.
+Use Teams to manage members, invites, and shared ownership.
 
 ### Billing
 
 Use Billing to review plan status, invoice items, allowance usage, and export flows.
 
-### Ops
+### Policies and activity
 
-Use Ops to manage routing policies, alerts, webhooks, retries, and operational visibility.
+Some workspaces call this section `Ops`. It is where you manage routing policies, alerts, webhooks, retries, and recent workspace activity.
 
 ## Terminal workflows
 

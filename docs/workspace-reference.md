@@ -9,7 +9,7 @@ Primary sections:
 - Studio
 - Teams
 - Billing
-- Ops
+- Policies and activity
 - Settings
 
 The sidebar also anchors the conversation list, so routing sessions behave like resumable workspaces instead of isolated prompts.
@@ -76,9 +76,9 @@ Billing provides:
 - CSV export
 - Stripe checkout and portal entry points
 
-## Ops
+## Policies and activity
 
-Ops is the policies and activity surface.
+Some workspaces label this area `Ops`. It is the place where you review routing rules, alerts, webhook activity, and recent workspace activity.
 
 Use it to manage:
 

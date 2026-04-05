@@ -3,8 +3,8 @@ layout: home
 
 hero:
   name: CS Code Router
-  text: Public docs for using the product through the web app, CLI, and API
-  tagline: Start fast, automate safely, and understand how routing decisions work.
+  text: Route work with confidence across the app, CLI, and API
+  tagline: Learn the product quickly, automate safely, and understand why each model path was chosen.
   image:
     src: /hero-architecture.svg
     alt: CS Code Router control plane overview
@@ -20,19 +20,30 @@ hero:
       link: /cli-reference
 
 features:
-  - title: Get Started Fast
-    details: Learn the product flow, sign in, route prompts, execute requests, and keep conversation context without deployment work.
-  - title: Route Intentionally
-    details: Understand provider selection, memory continuity, fallbacks, and interaction logging without digging through internal notes.
-  - title: Automate Safely
-    details: Use the CLI and public APIs with the right auth flow, scoped access, and security guardrails.
+  - title: Learn the Core Flow
+    details: Start with the hosted product, preview routes before you spend tokens, and keep conversations moving without losing context.
+  - title: Understand Decisions
+    details: See how model choices, fallback paths, and conversation memory shape each response without reading internal engineering material.
+  - title: Integrate With Confidence
+    details: Use the CLI or public API with the right sign-in method, scoped access, and clear security guidance.
 ---
+
+## What these docs cover
+
+This site is for people using the product, integrating with the API, or automating from the CLI.
+
+You will find:
+
+- quick onboarding guidance
+- public API and CLI references
+- workspace behavior and routing explanations
+- authentication and security guidance for normal product use
 
 ## Start here
 
 - [quickstart.md](quickstart.md) for the fastest product onboarding path
 - [user-guide.md](user-guide.md) for the core product loop and workspace workflows
-- [workspace-reference.md](workspace-reference.md) for the Studio, Teams, Billing, Ops, and Settings surfaces
+- [workspace-reference.md](workspace-reference.md) for the Studio, Teams, Billing, policies, and settings surfaces
 
 ## Core references
 

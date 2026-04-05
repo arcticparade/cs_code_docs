@@ -2,7 +2,13 @@
 
 CS Code Router exposes public tenant APIs for routing, execution, conversations, teams, policies, webhooks, and billing.
 
-This page is the API overview. Use it to find the right endpoint family, then jump into the dedicated reference page for examples and request shapes.
+This page is the API map. Use it to decide which part of the API you need, then jump into the dedicated page for examples and request shapes.
+
+<DocsCallout title="Who this is for" tone="note">
+
+Use these API pages if you are integrating CS Code Router into your own tools, scripts, or workflows. If you are mainly using the hosted app, start with the user guide and workspace reference instead.
+
+</DocsCallout>
 
 ## Base URLs
 
@@ -39,14 +45,14 @@ Use [api-conversations.md](api-conversations.md) for:
 - `POST /v1/conversations`
 - `POST /v1/conversations/:threadId/turns`
 
-### Operations and collaboration
+### Teams, policies, and webhooks
 
 Use [api-operations.md](api-operations.md) for:
 
 - teams and invites
 - policies and alerts
 - webhooks and deliveries
-- notifications and audit logs
+- notifications and activity logs
 
 ### Billing and entitlements
 
@@ -72,4 +78,4 @@ Use [api-billing.md](api-billing.md) for:
 - [auth-reference.md](auth-reference.md)
 - [model-routing.md](model-routing.md)
 - [security-features.md](security-features.md)
-- [docs/index.md](index.md)
+- [index.md](index.md)
