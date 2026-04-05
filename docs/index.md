@@ -32,7 +32,7 @@ features:
 
 - [quickstart.md](quickstart.md) for the fastest product onboarding path
 - [user-guide.md](user-guide.md) for the core product loop and workspace workflows
-- [workspace-reference.md](workspace-reference.md) for the Studio, Teams, Billing, Ops, and Admin surfaces
+- [workspace-reference.md](workspace-reference.md) for the Studio, Teams, Billing, Ops, and Settings surfaces
 
 ## Core references
 
