@@ -10,18 +10,6 @@ cs-code
 
 ## Install
 
-### Local install from the repo
-
-```bash
-./scripts/install-cli.sh
-```
-
-### Build release artifacts
-
-```bash
-./scripts/build-cli-release.sh
-```
-
 ### Install from a hosted release
 
 ```bash
@@ -33,13 +21,13 @@ curl -fsSL https://downloads.cs-code.com/cs-code/install.sh | bash
 ### Configure the API URL
 
 ```bash
-cs-code config set-url http://localhost:4000
+cs-code config set-url https://api.cs-code.com
 ```
 
 ### Log in with an API key
 
 ```bash
-cs-code login --api-key cs-code-demo-key
+cs-code login --api-key cp_live_xxxxx
 ```
 
 ### Preview routing
@@ -81,7 +69,7 @@ cs-code login --session-token sess_xxxxx
 Best for human-operated local tooling.
 
 ```bash
-cs-code login --oauth --tenant-id demo-company
+cs-code login --oauth --tenant-id your-tenant-id
 ```
 
 ## Core commands
@@ -177,29 +165,12 @@ cs-code execute \
   --confirm-sensitive
 ```
 
-## Enterprise behavior
+## Plan and policy behavior
 
-- Licensed session-backed users can route and execute under their own identity.
-- API keys can be limited by access preset, team, client application, and CLI mode.
-- Enterprise restrictions can block tools, providers, models, deployments, IP ranges, or allowed hours.
-- Growth tenants with isolated runtimes should use the tenant-specific base URL, such as `https://demo-company.cs-code.com`.
-- Agent mode is available on eligible Pro and Growth plans and is limited to `chat`, `code`, and `reasoning` tasks.
-
-## Publishing flow
-
-```bash
-export CS_CODE_CLI_DOWNLOAD_BASE_URL=https://downloads.cs-code.com/cs-code
-./scripts/build-cli-release.sh
-```
-
-Publish `dist/cli/` to your download origin. The release directory includes:
-
-- `cs-code-cli-v<version>.tar.gz`
-- `cs-code-cli-latest.tar.gz`
-- `install.sh`
-- `cs-code-install.sh`
-- `SHA256SUMS`
-- `cli-release.json`
+- user-backed CLI sessions respect the same account access as the web app
+- API keys can be scoped for automation access
+- organization policies can limit which models, providers, or tools are available
+- agent mode is available on supported plans for eligible task types
 
 ## Related docs
 

@@ -1,6 +1,6 @@
-# API: Operations And Collaboration
+# API: Teams, Policies, And Webhooks
 
-These endpoints cover teams, policy, alerts, webhooks, notifications, and audit visibility.
+These endpoints cover collaboration, routing policies, alerts, webhooks, notifications, and activity visibility.
 
 ## Teams
 
@@ -33,7 +33,7 @@ These endpoints cover teams, policy, alerts, webhooks, notifications, and audit 
 ## Example: save a policy
 
 ```bash
-curl http://localhost:4000/v1/policies \
+curl https://api.cs-code.com/v1/policies \
   -H 'authorization: Bearer <session-token>' \
   -H 'content-type: application/json' \
   -d '{

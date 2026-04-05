@@ -1,6 +1,6 @@
 # Workspace Reference
 
-The CS Code workspace is organized like a modern SaaS product: one shell, multiple focused surfaces, and a fast route-to-execution loop.
+The CS Code workspace is organized like a modern SaaS product: one shell, several focused surfaces, and a fast route-to-execution loop.
 
 ## Navigation model
 
@@ -57,15 +57,14 @@ That means:
 
 ## Teams
 
-Teams groups traffic by cost center and collaboration scope.
+Teams groups work by collaboration scope and ownership.
 
 Supported flows:
 
 - create a team
-- assign a monthly budget
 - add members
 - send invites
-- review pending invites and seat usage
+- review pending invites
 
 ## Billing
 
@@ -75,20 +74,19 @@ Billing provides:
 - included usage and remaining allowance
 - invoice line items
 - CSV export
-- enterprise export when enabled
 - Stripe checkout and portal entry points
 
 ## Ops
 
-Ops is the delivery and policy surface.
+Ops is the policies and activity surface.
 
 Use it to manage:
 
-- routing guardrails and preferred deployment policy
+- routing guardrails
 - spend alerts
 - webhook endpoints and secret rotation
-- webhook deliveries, retries, and dead-letter inspection
-- notifications and audit context
+- webhook deliveries and retries
+- notifications and recent activity context
 
 ## Settings
 

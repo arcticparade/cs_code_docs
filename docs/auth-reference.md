@@ -1,6 +1,6 @@
 # Authentication Reference
 
-This page explains how users, API keys, and CLI sessions work across the product.
+This page explains the main ways to sign in and authenticate when using the product, CLI, or API.
 
 ## Auth modes
 
@@ -17,7 +17,7 @@ Endpoints:
 
 ### Session tokens
 
-Session tokens are user-backed bearer tokens used by the web app, CLI OAuth flows, and any automation that should run under a real user identity.
+Session tokens are user-backed bearer tokens used by the web app, CLI OAuth flows, and user-level API access.
 
 ```bash
 Authorization: Bearer <session-token>
@@ -31,19 +31,7 @@ API keys are intended for machine callers.
 x-api-key: <tenant-api-key>
 ```
 
-Current access presets:
-
-- `read-only`
-- `write`
-- `admin`
-- `enterprise`
-
-API keys can also be limited by:
-
-- allowed teams
-- allowed CLI modes
-- allowed client applications
-- route and execute permissions
+API keys can be scoped to the capabilities your organization allows for automation.
 
 ### Browser OAuth for local tools
 
@@ -51,7 +39,7 @@ API keys can also be limited by:
 cs-code login --oauth --tenant-id demo-company
 ```
 
-This is the preferred path for human-operated local tooling because it keeps seat assignment, lifecycle status, and enterprise restrictions aligned with the web workspace.
+This is the preferred path for human-operated local tooling because it keeps your CLI access aligned with your normal workspace account.
 
 ## SSO
 
@@ -66,16 +54,14 @@ Access is evaluated using a combination of:
 - tenant role
 - team role
 - plan tier
-- license assignment
-- lifecycle status
-- API key preset and scope
-- enterprise restriction policy when enabled by your organization
+- account status
+- API key scope
+- organization policy when enabled by your organization
 
 Examples:
 
-- unlicensed session-backed users cannot route or execute
-- API keys cannot be used for unrestricted platform administration
-- organizations can restrict allowed models, providers, deployments, and client tools
+- API keys should be used for automation, not normal user sign-in
+- organizations can restrict which models, providers, or tools are available
 
 ## API key guidance
 

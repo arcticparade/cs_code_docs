@@ -1,6 +1,6 @@
 # Security Features
 
-CS Code Router includes product-level controls for identity, prompt safety, scoped access, and operational auditability.
+CS Code Router includes product-level controls for identity, prompt safety, scoped access, and activity visibility.
 
 ## Identity and access
 
@@ -11,14 +11,7 @@ Supported auth methods:
 - scoped API keys for machine traffic
 - browser OAuth for CLI and local tools
 
-API keys support preset-based access control:
-
-- `read-only`
-- `write`
-- `admin`
-- `enterprise`
-
-They can also be restricted by team, client application, and allowed CLI modes.
+API keys can be scoped to the level of automation access your organization allows.
 
 ## SSO and organization controls
 
@@ -58,7 +51,7 @@ Example behavior:
 
 ## Enterprise restrictions
 
-Enterprise policies can restrict:
+Organizations can restrict:
 
 - allowed providers
 - allowed model IDs
@@ -74,7 +67,7 @@ These checks are enforced server-side during route and execute.
 
 The platform captures:
 
-- audit logs for administrative and security-relevant actions
+- activity logs for security-relevant actions
 - structured interaction logs for route and execute traffic
 - request and response pairs for optimization analysis
 - user feedback for later prompt and route quality tuning
