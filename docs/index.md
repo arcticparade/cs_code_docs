@@ -39,13 +39,14 @@ You will find:
 - workspace behavior and routing explanations
 - authentication and security guidance for normal product use
 
-## Start here
+## Start here in order
 
 - [quickstart.md](quickstart.md) for the fastest product onboarding path
+- [who-should-read-what.md](who-should-read-what.md) if you want the fastest path by role or use case
 - [user-guide.md](user-guide.md) for the core product loop and workspace workflows
 - [workspace-reference.md](workspace-reference.md) for the Studio, Teams, Billing, policies, and settings surfaces
 
-## Core references
+## Then go deeper
 
 - [api-reference.md](api-reference.md) for the API map and endpoint-family navigation
 - [cli-reference.md](cli-reference.md) for install, auth, routing, and execution from the terminal
@@ -53,7 +54,7 @@ You will find:
 - [model-routing.md](model-routing.md) for scoring, fallback behavior, and optimization logging
 - [security-features.md](security-features.md) for prompt protection, scoped access, and auditability
 
-## Jump by task
+## Quick paths by goal
 
 ### I want to call the API
 

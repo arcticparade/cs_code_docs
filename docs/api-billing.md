@@ -1,8 +1,14 @@
 # API: Billing And Entitlements
 
-These endpoints expose plan state, usage summaries, exports, and Stripe-backed billing actions.
+Use these endpoints when you want to read plan state, usage summaries, entitlements, or billing actions tied to the current workspace.
 
-## Endpoints
+<DocsCallout title="When to use this" tone="note">
+
+Use these endpoints for subscription and usage views. If you mainly want routing or execution behavior, start with [api-routing.md](api-routing.md) instead.
+
+</DocsCallout>
+
+## Main endpoints
 
 - `GET /v1/billing/summary`
 - `GET /v1/billing/invoice.csv`
@@ -15,18 +21,25 @@ These endpoints expose plan state, usage summaries, exports, and Stripe-backed b
 ## Example: billing summary
 
 ```bash
-curl http://localhost:4000/v1/billing/summary \
+curl https://api.cs-code.com/v1/billing/summary \
   -H 'authorization: Bearer <session-token>'
 ```
 
 ## Example: start checkout
 
 ```bash
-curl http://localhost:4000/v1/payments/checkout-session \
+curl https://api.cs-code.com/v1/payments/checkout-session \
   -H 'authorization: Bearer <session-token>' \
   -H 'content-type: application/json' \
   -d '{}'
 ```
+
+## Billing actions covered here
+
+- read billing summary and exports
+- check current entitlements
+- start checkout or customer portal sessions
+- receive Stripe webhook events at the billing webhook target
 
 ## Stripe webhook target
 

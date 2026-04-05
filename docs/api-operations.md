@@ -1,8 +1,16 @@
 # API: Teams, Policies, And Webhooks
 
-These endpoints cover collaboration, routing policies, alerts, webhooks, notifications, and activity visibility.
+Use these endpoints when you want to manage teams, routing policies, alerts, webhooks, and workspace activity.
 
-## Teams
+<DocsCallout title="When to use this" tone="note">
+
+This page is most useful once you already understand the core product flow. If you are just getting started, begin with [quickstart.md](quickstart.md) or [api-reference.md](api-reference.md).
+
+</DocsCallout>
+
+## Main endpoint groups
+
+### Teams
 
 - `GET /v1/teams`
 - `POST /v1/teams`
@@ -11,7 +19,7 @@ These endpoints cover collaboration, routing policies, alerts, webhooks, notific
 - `POST /v1/teams/invites`
 - `POST /v1/teams/invites/accept`
 
-## Policy and alerts
+### Policy and alerts
 
 - `GET /v1/policies`
 - `POST /v1/policies`
@@ -19,7 +27,7 @@ These endpoints cover collaboration, routing policies, alerts, webhooks, notific
 - `POST /v1/alerts/:alertId/resolve`
 - `GET /v1/analytics/summary?tenantId=<tenant-id>`
 
-## Webhooks and notifications
+### Webhooks and notifications
 
 - `GET /v1/webhooks`
 - `POST /v1/webhooks`
