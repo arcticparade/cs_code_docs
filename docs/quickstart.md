@@ -8,6 +8,19 @@ Use the hosted product first. Once you can route and execute successfully in the
 
 </DocsCallout>
 
+## What you'll do
+
+You will move through this path:
+
+```mermaid
+flowchart LR
+  SignIn[Sign in] --> Studio[Open Studio]
+  Studio --> Route[Preview a route]
+  Route --> Execute[Execute the request]
+  Execute --> Continue[Continue the conversation]
+  Continue --> Automate[Move to CLI or API if needed]
+```
+
 ## 1. Sign in to the app
 
 Open the hosted workspace and sign in with your user account.
@@ -82,6 +95,8 @@ curl https://api.cs-code.com/v1/route \
 Use user sign-in or OAuth for people. Use API keys for automation and service-to-service traffic.
 
 </DocsCallout>
+
+## Where to go next
 
 Then continue with:
 

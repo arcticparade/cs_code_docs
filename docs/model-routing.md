@@ -2,6 +2,10 @@
 
 CS Code Router chooses the best model for a request by combining cost, capability, policy, deployment preference, and runtime availability.
 
+## What this page explains
+
+Use this page if you want to understand why a route changed, why a fallback was chosen, or how the product balances cost and capability.
+
 ## What the router considers
 
 Routing decisions are based on:
@@ -88,7 +92,7 @@ flowchart TD
 }
 ```
 
-## Explainability
+## What you see in the result
 
 Every route response includes:
 
@@ -122,7 +126,7 @@ If the request includes a conversation thread, the router can use:
 
 This lets the same thread survive model and deployment changes without losing the working context.
 
-## Optimization logs
+## Interaction logs
 
 Every route and execute request now writes a structured interaction log containing:
 

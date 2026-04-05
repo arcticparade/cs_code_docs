@@ -2,6 +2,17 @@
 
 This page explains the main ways to sign in and authenticate when using the product, CLI, or API.
 
+## How to choose an auth method
+
+```mermaid
+flowchart TD
+	Start[How are you using CS Code Router?] --> Person[I'm a person]
+	Start --> Automation[I'm automating]
+	Person --> Web[Use web sign-in]
+	Person --> Cli[Use CLI OAuth]
+	Automation --> ApiKey[Use an API key]
+```
+
 ## Auth modes
 
 ### Email and password
@@ -36,7 +47,7 @@ API keys can be scoped to the capabilities your organization allows for automati
 ### Browser OAuth for local tools
 
 ```bash
-cs-code login --oauth --tenant-id demo-company
+cs-code login --oauth --tenant-id your-tenant-id
 ```
 
 This is the preferred path for human-operated local tooling because it keeps your CLI access aligned with your normal workspace account.
@@ -77,7 +88,7 @@ Use OAuth or session tokens when:
 - user-level restrictions should apply
 - audit history should reflect the actual operator
 
-## Identity flows in practice
+## Common examples
 
 ### Log in from the web app
 

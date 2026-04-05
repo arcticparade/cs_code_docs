@@ -2,6 +2,10 @@
 
 CS Code Router includes product-level controls for identity, prompt safety, scoped access, and activity visibility.
 
+## What this page covers
+
+Use this page to understand the normal security features customers interact with during sign-in, API usage, and prompt execution.
+
 ## Identity and access
 
 Supported auth methods:
@@ -49,7 +53,7 @@ Example behavior:
 }
 ```
 
-## Enterprise restrictions
+## Organization restrictions
 
 Organizations can restrict:
 
@@ -63,7 +67,7 @@ Organizations can restrict:
 
 These checks are enforced server-side during route and execute.
 
-## Audit and optimization logging
+## Activity and optimization logging
 
 The platform captures:
 
@@ -72,7 +76,7 @@ The platform captures:
 - request and response pairs for optimization analysis
 - user feedback for later prompt and route quality tuning
 
-## Usage security tips
+## Good usage habits
 
 - rotate API keys and webhook secrets regularly
 - use session-backed access for humans and API keys for automation

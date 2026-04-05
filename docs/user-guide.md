@@ -2,6 +2,14 @@
 
 Use this guide when you are getting started as an end user. It follows the real product flow: sign in, route work, execute prompts, review outcomes, and then expand into team and workspace features.
 
+## What you'll learn
+
+This page helps you understand:
+
+- the normal product flow inside the workspace
+- where to go after your first successful route and execute cycle
+- which product areas matter most for day-to-day use
+
 ## Start with the core loop
 
 CS Code Router is built around one operating loop:
