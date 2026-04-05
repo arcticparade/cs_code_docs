@@ -1,0 +1,40 @@
+<svg width="720" height="520" viewBox="0 0 720 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="520" rx="32" fill="#F8F5EC"/>
+  <rect x="36" y="40" width="648" height="440" rx="28" fill="url(#panel)" stroke="#D9D0BC"/>
+  <rect x="72" y="84" width="180" height="124" rx="20" fill="#156F63"/>
+  <text x="102" y="124" fill="#F8F5EC" font-family="IBM Plex Sans, Arial, sans-serif" font-size="24" font-weight="700">Studio + CLI</text>
+  <text x="102" y="156" fill="#D8EEE7" font-family="IBM Plex Sans, Arial, sans-serif" font-size="16">Route previews</text>
+  <text x="102" y="180" fill="#D8EEE7" font-family="IBM Plex Sans, Arial, sans-serif" font-size="16">Execute calls</text>
+  <rect x="270" y="64" width="182" height="164" rx="22" fill="#FFFDF7" stroke="#CFC4AE"/>
+  <text x="298" y="104" fill="#17211D" font-family="IBM Plex Sans, Arial, sans-serif" font-size="24" font-weight="700">Control Plane</text>
+  <text x="298" y="138" fill="#42534C" font-family="IBM Plex Sans, Arial, sans-serif" font-size="16">Policies</text>
+  <text x="298" y="164" fill="#42534C" font-family="IBM Plex Sans, Arial, sans-serif" font-size="16">Budgets</text>
+  <text x="298" y="190" fill="#42534C" font-family="IBM Plex Sans, Arial, sans-serif" font-size="16">Interaction logs</text>
+  <rect x="482" y="84" width="160" height="68" rx="18" fill="#CE5F2D"/>
+  <text x="514" y="124" fill="#FFF6EF" font-family="IBM Plex Sans, Arial, sans-serif" font-size="22" font-weight="700">Cloud Models</text>
+  <rect x="482" y="166" width="160" height="68" rx="18" fill="#F1A15B"/>
+  <text x="524" y="206" fill="#402314" font-family="IBM Plex Sans, Arial, sans-serif" font-size="22" font-weight="700">Local Runtime</text>
+  <rect x="104" y="282" width="198" height="146" rx="22" fill="#FFFDF7" stroke="#CFC4AE"/>
+  <text x="132" y="320" fill="#17211D" font-family="IBM Plex Sans, Arial, sans-serif" font-size="24" font-weight="700">Operate</text>
+  <text x="132" y="352" fill="#42534C" font-family="IBM Plex Sans, Arial, sans-serif" font-size="16">Alerts and webhooks</text>
+  <text x="132" y="378" fill="#42534C" font-family="IBM Plex Sans, Arial, sans-serif" font-size="16">Billing and entitlements</text>
+  <text x="132" y="404" fill="#42534C" font-family="IBM Plex Sans, Arial, sans-serif" font-size="16">Enterprise controls</text>
+  <rect x="344" y="282" width="258" height="146" rx="22" fill="#0F5C52"/>
+  <text x="374" y="320" fill="#F8F5EC" font-family="IBM Plex Sans, Arial, sans-serif" font-size="24" font-weight="700">Deploy</text>
+  <text x="374" y="352" fill="#D8EEE7" font-family="IBM Plex Sans, Arial, sans-serif" font-size="16">Azure VM + PostgreSQL</text>
+  <text x="374" y="378" fill="#D8EEE7" font-family="IBM Plex Sans, Arial, sans-serif" font-size="16">Dedicated runtimes</text>
+  <text x="374" y="404" fill="#D8EEE7" font-family="IBM Plex Sans, Arial, sans-serif" font-size="16">Locked-down admin access</text>
+  <path d="M252 146H270" stroke="#B5A58C" stroke-width="6" stroke-linecap="round"/>
+  <path d="M452 120H482" stroke="#B5A58C" stroke-width="6" stroke-linecap="round"/>
+  <path d="M452 196H482" stroke="#B5A58C" stroke-width="6" stroke-linecap="round"/>
+  <path d="M361 228V262" stroke="#B5A58C" stroke-width="6" stroke-linecap="round"/>
+  <path d="M361 262H203" stroke="#B5A58C" stroke-width="6" stroke-linecap="round"/>
+  <path d="M361 262H474" stroke="#B5A58C" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="361" cy="262" r="10" fill="#CE5F2D"/>
+  <defs>
+    <linearGradient id="panel" x1="92" y1="72" x2="640" y2="444" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFDF7"/>
+      <stop offset="1" stop-color="#F2EEE2"/>
+    </linearGradient>
+  </defs>
+</svg>

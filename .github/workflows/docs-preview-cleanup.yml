@@ -1,0 +1,58 @@
+name: Docs Preview Cleanup
+
+on:
+  pull_request:
+    types:
+      - closed
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup-preview:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+
+      - name: Remove closed preview folder
+        env:
+          PREVIEW_DIR: previews/pr-${{ github.event.pull_request.number }}
+        run: |
+          if ! git ls-remote --exit-code origin gh-pages >/dev/null 2>&1; then
+            echo "gh-pages branch does not exist yet; nothing to clean."
+            exit 0
+          fi
+
+          git fetch origin gh-pages
+          rm -rf .preview-cleanup
+          git worktree add .preview-cleanup origin/gh-pages
+
+          if [ ! -d ".preview-cleanup/${PREVIEW_DIR}" ]; then
+            echo "Preview folder ${PREVIEW_DIR} does not exist; nothing to clean."
+            git worktree remove .preview-cleanup --force
+            exit 0
+          fi
+
+          rm -rf ".preview-cleanup/${PREVIEW_DIR}"
+          cd .preview-cleanup
+
+          if git status --short | grep . >/dev/null 2>&1; then
+            git add -A
+            git commit -m "chore: remove docs preview for pr #${{ github.event.pull_request.number }}"
+            git push origin HEAD:gh-pages
+          else
+            echo "No preview changes to commit."
+          fi
+
+          cd ..
+          git worktree remove .preview-cleanup --force

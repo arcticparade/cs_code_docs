@@ -1,0 +1,86 @@
+name: Docs Preview Deploy
+
+on:
+  pull_request:
+    paths:
+      - docs/**
+      - package.json
+      - package-lock.json
+      - .github/workflows/docs-preview.yml
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - docs/**
+      - package.json
+      - package-lock.json
+      - .github/workflows/docs-preview.yml
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: docs-preview-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy-docs:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.11.0
+          cache: npm
+
+      - name: Compute preview paths
+        id: preview
+        run: |
+          repo_name="${GITHUB_REPOSITORY#*/}"
+          owner_name="${GITHUB_REPOSITORY_OWNER}"
+          if [ "${GITHUB_EVENT_NAME}" = "pull_request" ]; then
+            preview_dir="previews/pr-${{ github.event.pull_request.number }}"
+            preview_base="/${repo_name}/${preview_dir}/"
+            preview_url="https://${owner_name}.github.io/${repo_name}/${preview_dir}/"
+          else
+            preview_dir="."
+            preview_base="/${repo_name}/"
+            preview_url="https://${owner_name}.github.io/${repo_name}/"
+          fi
+          echo "preview_dir=${preview_dir}" >> "$GITHUB_OUTPUT"
+          echo "preview_base=${preview_base}" >> "$GITHUB_OUTPUT"
+          echo "preview_url=${preview_url}" >> "$GITHUB_OUTPUT"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build docs
+        run: npm run docs:build
+        env:
+          DOCS_BASE: ${{ steps.preview.outputs.preview_base }}
+
+      - name: Deploy preview to GitHub Pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/.vitepress/dist
+          publish_branch: gh-pages
+          destination_dir: ${{ steps.preview.outputs.preview_dir }}
+          keep_files: true
+
+      - name: Comment preview URL
+        if: github.event_name == 'pull_request'
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: docs-preview
+          message: |
+            Docs preview is available for this PR:
+
+            ${{ steps.preview.outputs.preview_url }}
