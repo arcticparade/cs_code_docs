@@ -41,12 +41,17 @@ You will find:
 
 ## Start here in order
 
+If you are new to the product, follow these pages in sequence. They move from first-use onboarding into the core product workflow and then into the workspace layout.
+
 - [quickstart.md](quickstart.md) for the fastest product onboarding path
 - [who-should-read-what.md](who-should-read-what.md) if you want the fastest path by role or use case
+- [common-tasks.md](common-tasks.md) if you prefer to jump straight to a common job to be done
 - [user-guide.md](user-guide.md) for the core product loop and workspace workflows
 - [workspace-reference.md](workspace-reference.md) for the Studio, Teams, Billing, policies, and settings surfaces
 
 ## Then go deeper
+
+Use these references once you already know whether you are primarily using the web app, the CLI, or a direct API integration.
 
 - [api-reference.md](api-reference.md) for the API map and endpoint-family navigation
 - [cli-reference.md](cli-reference.md) for install, auth, routing, and execution from the terminal
@@ -55,6 +60,8 @@ You will find:
 - [security-features.md](security-features.md) for prompt protection, scoped access, and auditability
 
 ## Quick paths by goal
+
+Use these shortcuts if you already know what you are trying to accomplish and want the smallest possible reading path.
 
 ### I want to call the API
 

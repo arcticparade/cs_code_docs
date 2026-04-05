@@ -47,6 +47,7 @@ export default defineConfig({
           { text: "Documentation Index", link: "/" },
           { text: "Quickstart", link: "/quickstart" },
           { text: "Who Should Read What", link: "/who-should-read-what" },
+          { text: "Common Tasks", link: "/common-tasks" },
           { text: "User Guide", link: "/user-guide" },
           { text: "Workspace", link: "/workspace-reference" }
         ]

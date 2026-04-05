@@ -26,6 +26,15 @@ Use one of these auth modes:
 
 See [auth-reference.md](auth-reference.md) for the full identity model.
 
+## Choose the right API page
+
+Use this simple split before you go deeper:
+
+- choose [api-routing.md](api-routing.md) if you want to preview or execute work
+- choose [api-conversations.md](api-conversations.md) if you want stored thread context
+- choose [api-operations.md](api-operations.md) if you want teams, policies, alerts, or webhooks
+- choose [api-billing.md](api-billing.md) if you want billing or entitlement information
+
 ## Endpoint families
 
 ### Routing and execution
@@ -72,6 +81,22 @@ Use [api-billing.md](api-billing.md) for:
 - `409`: prompt blocked pending sensitive-content confirmation
 - `429`: rate-limited at the user, org, API key, or gateway layer
 - `502`: provider execution failed after fallback attempts
+
+## Start with this example
+
+If you are new to the API, a route preview is the best first request:
+
+```bash
+curl https://api.cs-code.com/v1/route \
+	-H 'content-type: application/json' \
+	-H 'x-api-key: cp_live_xxxxx' \
+	-d '{
+		"tenantId": "your-tenant-id",
+		"taskType": "chat",
+		"prompt": "Summarize the latest customer issue in five bullets.",
+		"preferredDeployment": "auto"
+	}'
+```
 
 ## Related docs
 

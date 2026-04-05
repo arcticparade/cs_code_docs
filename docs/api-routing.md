@@ -8,14 +8,14 @@ If you are new to the API, begin with `POST /v1/route` so you can inspect the ex
 
 </DocsCallout>
 
-## Endpoints
+## Main endpoints
 
 - `POST /v1/route`
 - `POST /v1/execute`
 - `GET /v1/interactions`
 - `POST /v1/interactions/:interactionId/feedback`
 
-## Route a prompt
+## Example: route a prompt
 
 ```bash
 curl https://api.cs-code.com/v1/route \
@@ -36,10 +36,9 @@ Key response fields:
 - `fallbacks`
 - `estimatedInputTokens`
 - `estimatedOutputTokens`
-- `evaluatedPolicyIds`
 - `interactionLogId`
 
-## Execute a prompt
+## Example: execute a prompt
 
 ```bash
 curl https://api.cs-code.com/v1/execute \
@@ -65,6 +64,14 @@ Execution returns:
 - `simulated`
 - `attemptLog`
 - `interactionLogId`
+
+## Other actions on this page
+
+Beyond route and execute, this endpoint family also covers:
+
+- viewing recent interaction records
+- saving feedback on route or execute outcomes
+- confirming prompts when sensitive-content checks are triggered
 
 ## Sensitive prompt confirmation
 
